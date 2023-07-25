@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour {
 
 	[SerializeField] UIManager UIMan;
  
-	int totalScore;
+	[SerializeField] int totalScore;
 
 
 

@@ -13,10 +13,10 @@ NavMeshProjectSettings:
     cost: 2
   - name: Queue
     cost: 2
-  - name: 
-    cost: 1
-  - name: 
-    cost: 1
+  - name: Road
+    cost: 3
+  - name: Sidewalk
+    cost: 2
   - name: 
     cost: 1
   - name: 

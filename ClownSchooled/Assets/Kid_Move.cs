@@ -14,7 +14,8 @@ public class Kid_Move : MonoBehaviour {
 	[SerializeField] float timeUntilQueue;
 	[SerializeField] float currentTimeUntilQueue;
 
-	[SerializeField] Transform[] chosenQueue;
+	[SerializeField] GameObject[] Queues;
+	[SerializeField] List<Transform> chosenQueue;
 	[SerializeField] int currentQueuePos;
 	[SerializeField] float distToQueuePos;
 
@@ -67,7 +68,16 @@ public class Kid_Move : MonoBehaviour {
 			case attentionState.wandering:
 				if (currentTimeUntilQueue <= 0) {
 					//nav.ResetPath();
-					currentQueuePos = chosenQueue.Length - 1;
+					QueueManager queueMan = Queues[Random.Range(0, Queues.Length)].GetComponent<QueueManager>();
+					waitTime = queueMan.queueSpeed;
+
+					chosenQueue = new List<Transform>();
+					foreach (Transform position in queueMan.queuePositions) {
+						chosenQueue.Add(position);
+					}
+
+					///Get into the last place in line, if you can.
+					currentQueuePos = chosenQueue.Count - 1;
 					if (!balloonScript.balloonsFull && chosenQueue[currentQueuePos].childCount == 0) {
 						nav.areaMask += 1 << NavMesh.GetAreaFromName("Queue");
 						UpdateQueuePos(chosenQueue[currentQueuePos]);
@@ -112,8 +122,20 @@ public class Kid_Move : MonoBehaviour {
 					currentWaitTime -= Time.deltaTime;
 				}
 				else {
-					//print("The kid at the counter waited too long!");
-					attention = attentionState.dissatisfied;
+					///If the "booth" is not player-operated, just have the kid leave (with whatever "souvenier" may be available
+					///(cake, other food, a present, their face painted, etc.))
+					QueueManager queueMan = chosenQueue[currentQueuePos].parent.GetComponent<QueueManager>();
+					if (queueMan.isPlayerOperated) {
+						//print("The kid at the counter waited too long!");
+						attention = attentionState.dissatisfied;
+					}
+					else {
+						Attraction attraction = queueMan.myAttraction.GetComponent<Attraction>();
+						attraction.AttendAttraction();
+
+						attention = attentionState.satisfied;
+					}
+
 				}
 				break;
 			case attentionState.exitingQueue:
@@ -155,6 +177,7 @@ public class Kid_Move : MonoBehaviour {
 		//print("Left the queue");
 		nav.areaMask = 1 << NavMesh.GetAreaFromName("Walkable");
 		attention = attentionState.idle;
+		chosenQueue.Clear();
 
 		///Request a new balloon color/shape
 		//balloonScript.RequestBalloon();

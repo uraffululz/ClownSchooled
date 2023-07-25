@@ -53,12 +53,16 @@
     <UnityVersion>2021.1.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\CakeManager.cs" />
     <Compile Include="Assets\StageManager.cs" />
     <Compile Include="Assets\Balloon_Dog.cs" />
+    <Compile Include="Assets\QueueManager.cs" />
     <Compile Include="Assets\Kid_Move.cs" />
     <Compile Include="Assets\PlayerMove.cs" />
     <Compile Include="Assets\Balloon_ProcessingStation.cs" />
+    <Compile Include="Assets\PresentManager.cs" />
     <Compile Include="Assets\ScoreManager.cs" />
+    <Compile Include="Assets\Attraction.cs" />
     <Compile Include="Assets\Kid_BalloonScript.cs" />
     <Compile Include="Assets\Player_BalloonControl.cs" />
     <Compile Include="Assets\UIManager.cs" />
@@ -634,13 +638,25 @@
       <Project>{A61992E1-0788-5452-F350-77FFD6ABDA3B}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{4AB3F23E-D674-C322-5A55-6F0416DE0C79}</Project>
-      <Name>Unity.VisualScripting.State.Player</Name>
+    <ProjectReference Include="UnityEngine.SpatialTracking.Player.csproj">
+      <Project>{188C64E6-ED47-8FFE-8D20-8EF703050977}</Project>
+      <Name>UnityEngine.SpatialTracking.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
       <Project>{B74889DC-654D-1C0E-8FDD-56942670287F}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.Player.csproj">
+      <Project>{6736BFE9-81C3-BD89-8C24-A122C5459BB6}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Management.Player.csproj">
+      <Project>{84924B67-585A-E1B3-9C3B-92A0638C38EF}</Project>
+      <Name>Unity.XR.Management.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
+      <Project>{4AB3F23E-D674-C322-5A55-6F0416DE0C79}</Project>
+      <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

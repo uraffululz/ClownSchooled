@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour {
  
@@ -11,6 +12,9 @@ public class UIManager : MonoBehaviour {
 	[SerializeField] GameObject counterBG;
 	[SerializeField] Image counterColor;
 	[SerializeField] Text counterShape;
+
+
+	[SerializeField] Image gameOverUI;
 
 
     void Start() {
@@ -49,5 +53,12 @@ public class UIManager : MonoBehaviour {
 		counterBG.SetActive(false);
 	}
 
+	public void GameOver() {
+		gameOverUI.gameObject.SetActive(true);
+	}
 
+	public void Restart() {
+		Time.timeScale = 1f;
+		SceneManager.LoadScene(0);
+	}
 }

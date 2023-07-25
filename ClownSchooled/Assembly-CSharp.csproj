@@ -53,12 +53,16 @@
     <UnityVersion>2021.1.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\CakeManager.cs" />
     <Compile Include="Assets\StageManager.cs" />
     <Compile Include="Assets\Balloon_Dog.cs" />
+    <Compile Include="Assets\QueueManager.cs" />
     <Compile Include="Assets\Kid_Move.cs" />
     <Compile Include="Assets\PlayerMove.cs" />
     <Compile Include="Assets\Balloon_ProcessingStation.cs" />
+    <Compile Include="Assets\PresentManager.cs" />
     <Compile Include="Assets\ScoreManager.cs" />
+    <Compile Include="Assets\Attraction.cs" />
     <Compile Include="Assets\Kid_BalloonScript.cs" />
     <Compile Include="Assets\Player_BalloonControl.cs" />
     <Compile Include="Assets\UIManager.cs" />
@@ -666,9 +670,9 @@
       <Project>{6F7EA97D-5973-E508-1EAE-A477C01CC1C4}</Project>
       <Name>Unity.VisualStudio.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{DA383ED2-B921-36B5-5339-8187C1906953}</Project>
-      <Name>Unity.Timeline.Editor</Name>
+    <ProjectReference Include="Unity.XR.Management.Editor.csproj">
+      <Project>{94AE4520-1805-E39B-9E7C-F9AEAE0ACB63}</Project>
+      <Name>Unity.XR.Management.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
       <Project>{118DEA05-9587-196E-5222-68D2EFDC3CAE}</Project>
@@ -706,21 +710,45 @@
       <Project>{19B9FB31-F2BE-A476-6690-388AC7FA2491}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{2B2785DF-97F8-A8CC-F6C0-B794803B8F4F}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
     <ProjectReference Include="Unity.PlasticSCM.Editor.csproj">
       <Project>{DD615561-CBF8-FE32-86B4-B5B48D103D4D}</Project>
       <Name>Unity.PlasticSCM.Editor</Name>
     </ProjectReference>
-    <ProjectReference Include="Unity.VisualScripting.State.csproj">
-      <Project>{BB08E239-1489-8A1A-ABB9-F920DB9311B0}</Project>
-      <Name>Unity.VisualScripting.State</Name>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{2B2785DF-97F8-A8CC-F6C0-B794803B8F4F}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.SpatialTracking.csproj">
+      <Project>{F99E36AC-8F37-2668-2BD7-F5B2FFE0594E}</Project>
+      <Name>UnityEngine.SpatialTracking</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.csproj">
       <Project>{DD7B8740-4B51-14B4-3A71-CA7F262FB871}</Project>
       <Name>Unity.VisualScripting.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.XR.LegacyInputHelpers.csproj">
+      <Project>{5B7225FA-730E-AC13-77D3-38780DC9FE94}</Project>
+      <Name>UnityEngine.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Timeline.Editor.csproj">
+      <Project>{DA383ED2-B921-36B5-5339-8187C1906953}</Project>
+      <Name>Unity.Timeline.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.XR.LegacyInputHelpers.csproj">
+      <Project>{636EA40A-EBB3-93D1-D293-04A131D3AC6A}</Project>
+      <Name>UnityEditor.XR.LegacyInputHelpers</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.XR.Management.csproj">
+      <Project>{6B898B34-4FBD-D467-53ED-331D048660A6}</Project>
+      <Name>Unity.XR.Management</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.SpatialTracking.csproj">
+      <Project>{EB704898-9080-DA7F-0F9A-CF29E0D4EE2D}</Project>
+      <Name>UnityEditor.SpatialTracking</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VisualScripting.State.csproj">
+      <Project>{BB08E239-1489-8A1A-ABB9-F920DB9311B0}</Project>
+      <Name>Unity.VisualScripting.State</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
